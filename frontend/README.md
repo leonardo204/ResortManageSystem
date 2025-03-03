@@ -2,7 +2,7 @@
 
 ## 프로젝트 개요
 
-본 프로젝트는 리조트 예약 시스템의 프론트엔드 부분을 담당합니다. React와 TypeScript를 기반으로 하여 현대적이고 사용자 친화적인 웹 인터페이스를 제공합니다.
+본 프로젝트는 리조트 예약 시스템의 프론트엔드 부분을 담당합니다. React와 TypeScript를 기반으로 하여 현대적이고 사용자 친화적인 웹 인터페이스를 제공합니다. Figma 디자인을 Builder.io를 통해 React 컴포넌트로 변환하여 개발 생산성을 향상시키고, Material-UI와 Tailwind CSS를 활용하여 일관된 디자인 시스템을 구축합니다.
 
 ### 기술 스택
 
@@ -14,9 +14,10 @@
 - **상태 관리**
   - Zustand 5.0.3
 
-- **UI 프레임워크**
-  - Material-UI (MUI) 6.4.5
-  - Tailwind CSS 3.4.17
+- **UI 개발 도구**
+  - Builder.io: Figma 디자인을 React 컴포넌트로 변환
+  - Material-UI (MUI) 6.4.5: 기본 UI 컴포넌트 제공
+  - Tailwind CSS 3.4.17: 유틸리티 기반 스타일링
 
 - **API 통신**
   - Axios 1.7.9
@@ -24,6 +25,14 @@
 - **코드 품질 관리**
   - ESLint
   - Prettier
+
+### UI/UX 개발 워크플로우
+
+1. UI/UX 엔지니어가 Figma에서 디자인 작업
+2. Builder.io 플러그인을 통해 React 컴포넌트로 변환
+3. 변환된 컴포넌트에 MUI 컴포넌트 통합
+4. Tailwind CSS로 세부 스타일링 및 반응형 디자인 구현
+5. Zustand를 통한 상태 관리 연동
 
 ## 주요 기능
 
@@ -81,8 +90,8 @@ frontend/
 
 1. **프로젝트 클론**
    ```bash
-   git clone [repository-url]
-   cd [repository-name]/frontend
+   git clone git@github.com:leonardo204/ResortManageSystem.git
+   cd ./ResortManageSystem/frontend
    ```
 
 2. **의존성 설치**
