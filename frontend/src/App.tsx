@@ -1,23 +1,15 @@
-import React from 'react';
-import './App.css';
-import InputDesign from './components/InputDesign';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './components/pages/LoginPage/LoginPage';
 
-function App() {
-  const handleSubmit = (email: string) => {
-    console.log('Email submitted:', email);
-    // Handle email submission logic here
-  };
-
-  const handleCancel = () => {
-    console.log('Signup cancelled');
-    // Handle cancel logic here
-  };
-
+const App = () => {
   return (
-    <div className='App'>
-      <InputDesign onSubmit={handleSubmit} onCancel={handleCancel} />
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/' element={<Navigate to='/login' replace />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
