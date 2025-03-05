@@ -36,7 +36,9 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
-    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc"
+    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
@@ -57,10 +59,23 @@
     ]
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.5",
+    "@storybook/addon-essentials": "^8.6.3",
+    "@storybook/addon-interactions": "^8.6.3",
+    "@storybook/addon-onboarding": "^8.6.3",
+    "@storybook/blocks": "^8.6.3",
+    "@storybook/preset-create-react-app": "^8.6.3",
+    "@storybook/react": "^8.6.3",
+    "@storybook/react-webpack5": "^8.6.3",
+    "@storybook/test": "^8.6.3",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
-    "prettier": "^3.5.2"
+    "eslint-plugin-storybook": "^0.11.4",
+    "prettier": "^3.5.2",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.6.3",
+    "webpack": "^5.98.0"
   }
 }
