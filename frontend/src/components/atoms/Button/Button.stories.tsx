@@ -16,31 +16,8 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    children: '버튼',
-    type: 'button',
-  },
-};
-
-export const Text: Story = {
-  args: {
-    variant: 'text',
-    children: '텍스트 버튼',
-    type: 'button',
-  },
-};
-
-export const FullWidth: Story = {
-  args: {
-    variant: 'primary',
-    children: '전체 너비 버튼',
+    children: '로그인',
     fullWidth: true,
-  },
-};
-
-export const Submit: Story = {
-  args: {
-    variant: 'primary',
-    children: '제출',
-    type: 'submit',
+    className: 'h-14 px-5 py-3 bg-[#256EF4] rounded-lg flex justify-center items-center gap-1',
   },
 };
