@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
+import PortalLink from '../../molecules/PortalLink/PortalLink';
 import altimediaLogo from '../../../assets/images/altimedia-logo.svg';
 
 const LoginPage = () => {
@@ -20,14 +21,21 @@ const LoginPage = () => {
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-50'>
-      <div className='flex flex-col items-center'>
-        <img src={altimediaLogo} alt='Altimedia Logo' className='w-48 mb-8' />
-        <LoginForm
-          onLogin={handleLogin}
-          onSignupClick={handleSignupClick}
-          onResetPasswordClick={handleResetPasswordClick}
-        />
+    <div className='min-h-screen bg-[#E5ECF9] relative'>
+      <div className='absolute right-8 top-10'>
+        <PortalLink href='/group-portal'>Group Portal</PortalLink>
+      </div>
+      <div className='flex items-center justify-center min-h-screen'>
+        <div className='w-[700px] h-[700px] bg-white rounded-xl shadow-[0px_4px_8px_rgba(0,0,0,0.08)] p-8 relative'>
+          <div className='flex flex-col items-center'>
+            <img src={altimediaLogo} alt='Altimedia Logo' className='w-[240px] h-[107px] mb-8' />
+            <LoginForm
+              onLogin={handleLogin}
+              onSignupClick={handleSignupClick}
+              onResetPasswordClick={handleResetPasswordClick}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

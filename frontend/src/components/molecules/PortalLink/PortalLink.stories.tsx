@@ -21,7 +21,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const GroupPortal: Story = {
+  args: {
+    href: '/group-portal',
+    children: 'Group Portal',
+  },
+};
+
+export const SignUp: Story = {
   args: {
     href: '/signup',
     children: '회원가입',
