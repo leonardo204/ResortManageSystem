@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import InputField from '../../atoms/InputField/InputField';
 import Button from '../../atoms/Button/Button';
+import TextLink from '../../atoms/TextLink/TextLink';
 
 interface LoginFormProps {
   onLogin?: (email: string, password: string) => void;
-  onSignupClick?: () => void;
-  onResetPasswordClick?: () => void;
 }
 
-const LoginForm = ({ onLogin, onSignupClick, onResetPasswordClick }: LoginFormProps) => {
+const LoginForm = ({ onLogin }: LoginFormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -43,13 +42,9 @@ const LoginForm = ({ onLogin, onSignupClick, onResetPasswordClick }: LoginFormPr
         </Button>
 
         <div className='flex gap-1 items-center justify-center mt-14'>
-          <Button variant='text' onClick={onSignupClick}>
-            회원가입
-          </Button>
+          <TextLink href='/signup'>회원가입</TextLink>
           <div className='w-1 h-1 rounded-full bg-neutral-600' />
-          <Button variant='text' onClick={onResetPasswordClick}>
-            비밀번호 재설정
-          </Button>
+          <TextLink href='/reset-password'>비밀번호 재설정</TextLink>
         </div>
       </div>
     </form>

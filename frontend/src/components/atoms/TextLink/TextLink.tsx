@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
-interface PortalLinkProps {
+interface TextLinkProps {
   href: string;
   children: ReactNode;
   className?: string;
 }
 
-const PortalLink = ({ href, children, className }: PortalLinkProps) => {
+const TextLink = ({ href, children, className }: TextLinkProps) => {
   return (
     <Link
       to={href}
@@ -18,4 +18,4 @@ const PortalLink = ({ href, children, className }: PortalLinkProps) => {
   );
 };
 
-export default PortalLink;
+export default TextLink;
