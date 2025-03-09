@@ -20,7 +20,7 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col items-center w-full'>
-      <div className='w-[360px] max-md:w-[300px] max-sm:w-full'>
+      <div className='w-[360px]'>
         <InputField
           label='Email'
           type='email'
@@ -29,19 +29,21 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <InputField
-          label='Password'
-          type='password'
-          placeholder='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className='mt-4'>
+          <InputField
+            label='Password'
+            type='password'
+            placeholder='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-        <Button type='submit' variant='primary' fullWidth className='mt-10'>
+        <Button type='submit' variant='primary' fullWidth className='mt-10 h-[56px]'>
           로그인
         </Button>
 
-        <div className='flex gap-1 items-center justify-center mt-14'>
+        <div className='flex gap-1 items-center justify-center mt-10'>
           <TextLink href='/signup'>회원가입</TextLink>
           <div className='w-1 h-1 rounded-full bg-neutral-600' />
           <TextLink href='/reset-password'>비밀번호 재설정</TextLink>

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import LoginPage from './LoginPage';
 
 const meta = {
@@ -10,9 +10,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <BrowserRouter>
+      <MemoryRouter>
         <Story />
-      </BrowserRouter>
+      </MemoryRouter>
     ),
   ],
   tags: ['autodocs'],

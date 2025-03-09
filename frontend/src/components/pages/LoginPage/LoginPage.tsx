@@ -21,9 +21,11 @@ const LoginPage = () => {
         </IconLink>
       </div>
       <div className='flex items-center justify-center min-h-screen'>
-        <div className='w-[700px] h-[700px] bg-white rounded-xl shadow-[0px_4px_8px_rgba(0,0,0,0.08)] p-8 relative'>
-          <div className='flex flex-col items-center'>
-            <img src={altimediaLogo} alt='Altimedia Logo' className='w-[240px] h-[107px] mb-8' />
+        <div className='w-[700px] h-[700px] bg-white rounded-[12px] shadow-[0px_4px_8px_rgba(0,0,0,0.08)] relative'>
+          <div className='absolute left-1/2 transform -translate-x-1/2 top-[96px]'>
+            <img src={altimediaLogo} alt='Altimedia Logo' className='w-[240px] h-[107px]' />
+          </div>
+          <div className='absolute left-1/2 transform -translate-x-1/2 top-[248px]'>
             <LoginForm onLogin={handleLogin} />
           </div>
         </div>
