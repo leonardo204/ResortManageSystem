@@ -43,10 +43,14 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
           로그인
         </Button>
 
-        <div className='flex gap-1 items-center justify-center mt-10'>
-          <TextLink href='/signup'>회원가입</TextLink>
-          <div className='w-1 h-1 rounded-full bg-neutral-600' />
-          <TextLink href='/reset-password'>비밀번호 재설정</TextLink>
+        <div className='flex items-center justify-center mt-10'>
+          <div className='px-2'>
+            <TextLink href='/signup'>회원가입</TextLink>
+          </div>
+          <div className='w-1 h-1 bg-[#464C53] rounded-full'></div>
+          <div className='px-2'>
+            <TextLink href='/reset-password'>비밀번호 재설정</TextLink>
+          </div>
         </div>
       </div>
     </form>
