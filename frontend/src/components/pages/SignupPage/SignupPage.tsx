@@ -1,37 +1,35 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import AuthLayout from '../../templates/AuthLayout/AuthLayout';
-import SignupForm from '../../organisms/SignupForm/SignupForm';
-import PortalLink from '../../molecules/PortalLink/PortalLink';
+import { useLocation, useNavigate } from 'react-router-dom';
+import SignupForm, { SignupFormData } from '../../organisms/SignupForm/SignupForm';
+import IconLink from '../../molecules/IconLink/IconLink';
+import arrowIcon from '../../../assets/images/open-new-window.svg';
 
 const SignupPage = () => {
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const handleSubmit = (email: string) => {
-    // Here you would typically handle the signup process
-    console.log('Signup with email:', email);
-    // After successful signup, navigate to the next step
-    // navigate('/verify-email');
-  };
+  // Get email from location state or use default
+  const email = location.state?.email || 'example@altimedia.com';
 
-  const handleCancel = () => {
-    // Navigate back to login or home page
+  const handleSubmit = (formData: SignupFormData) => {
+    console.log('Signup form submitted:', formData);
+    // Here you would typically send the data to your API
+    // For now, we'll just navigate to the login page
     navigate('/login');
   };
 
   return (
-    <div className='flex flex-col justify-center items-center min-h-screen bg-sky-100 relative'>
-      <AuthLayout title='회원가입' footer={null}>
-        <div className='mb-14 text-lg text-center text-black'>
-          GP 로그인 시 사용하는 Email을 입력해주세요
-        </div>
-        <SignupForm onSubmit={handleSubmit} onCancel={handleCancel} />
-      </AuthLayout>
-      <PortalLink
-        href='#'
-        label='Group Portal'
-        className='absolute top-10 right-10 max-sm:static max-sm:mt-5'
-      />
+    <div className='flex flex-col justify-center items-center px-5 py-16 mx-auto max-w-none min-h-screen bg-sky-100 max-md:max-w-[991px] max-sm:max-w-screen-sm'>
+      <div className='p-10 w-full bg-white rounded-xl max-w-[700px] shadow-[0_0_2px_rgba(0,0,0,0.05),0_4px_8px_rgba(0,0,0,0.08)] max-sm:p-5'>
+        <SignupForm email={email} onSubmit={handleSubmit} />
+      </div>
+
+      {/* Group Portal Link */}
+      <div className='absolute top-10 right-10 max-sm:static max-sm:mt-5'>
+        <IconLink href='https://portal.altimedia.com' icon={arrowIcon}>
+          Group Portal
+        </IconLink>
+      </div>
     </div>
   );
 };
